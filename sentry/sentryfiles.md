@@ -1,0 +1,1 @@
+local onde será persistido arquivos gerados pelo sentry

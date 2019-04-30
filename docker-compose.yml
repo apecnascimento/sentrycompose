@@ -1,0 +1,53 @@
+version: '3'
+services:
+  sentry:
+    image: sentry:9.0
+    command: sentry run web
+    volumes: 
+      - ./sentry/files:/var/lib/sentry/files
+    env_file:
+      - .env.sentry
+    depends_on: 
+      - postgres
+      - redis
+      - memcached
+    ports: 
+      - 8080:9000
+
+  sentry_cron:
+    image: sentry:9.0
+    command: sentry run cron
+    volumes: 
+      - ./sentry/files:/var/lib/sentry/files
+    env_file:
+      - .env.sentry
+    depends_on: 
+      - postgres
+      - redis
+      - memcached
+
+  sentry_worker:
+    image: sentry:9.0
+    command: sentry run worker
+    volumes: 
+      - ./sentry/files:/var/lib/sentry/files
+    env_file:
+      - .env.sentry
+    depends_on: 
+      - postgres
+      - redis
+      - memcached
+
+
+  postgres:
+    image: postgres:11.2
+    env_file: 
+      - .env.postgres
+  
+  redis:
+    image: redis:alpine
+
+  memcached:
+    image: memcached:1.5
+
+  
