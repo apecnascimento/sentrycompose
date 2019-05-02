@@ -5,14 +5,14 @@ Sentry é fundamentalmente um serviço que ajuda a monitorar e corrigir falhas e
 
 ## Como usar essa ferramenta?
 
-Primeiramente inicie uma sessao do bash com o container do sentry:
+Primeiramente crie uma chave de segurança do sentry. Essa chave é usada para encriptar informações confidenciais no sentry:
 ```sh
-    docker-compose run sentry bash
+    docker-compose run --rm sentry sentry config generate-secret-key
 ```
 
 Depois execute o comando abaixo para criar o banco de dados e as tabelas:
 ```sh
-    sentry update
+     docker-compose run --rm sentry sentry upgrade
 ```
 Apos finalizar a criação das tabelas execulte o compose:
 ```sh
