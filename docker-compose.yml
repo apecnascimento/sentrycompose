@@ -12,7 +12,7 @@ services:
       - redis
       - memcached
     ports: 
-      - 8080:9000
+      - 8170:9000
 
   sentry_cron:
     image: sentry:9.0

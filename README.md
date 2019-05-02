@@ -9,6 +9,7 @@ Primeiramente crie uma chave de segurança do sentry. Essa chave é usada para e
 ```sh
     docker-compose run --rm sentry sentry config generate-secret-key
 ```
+Adicione a chave dse seguranção gerada pelo sentry na variavel de anbiente SENTRY_SECRET_KEY.
 
 Depois execute o comando abaixo para criar o banco de dados e as tabelas:
 ```sh
