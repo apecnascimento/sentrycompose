@@ -1,6 +1,6 @@
 # Sentry 
 ## O que é sentry
-O Sentry é uma cros-plataforma de monitoramento de aplicativos, com foco no relatório de erros.
+O Sentry é uma ferramenta cros-plataforma de monitoramento de aplicativos, com foco no relatório de erros.
 Sentry é fundamentalmente um serviço que ajuda a monitorar e corrigir falhas em tempo real. O servidor está em Python, mas contém uma API completa para enviar eventos de qualquer liguagem de programação, em qualquer aplicativo.
 
 ## Como usar essa ferramenta?
